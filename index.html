@@ -21,9 +21,9 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="AFLuo&#39;s site">
+<meta property="og:title" content="Notebook">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="AFLuo&#39;s site">
+<meta property="og:site_name" content="Notebook">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="AFLuo">
 <meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>AFLuo's site</title>
+  <title>Notebook</title>
   
 
 
@@ -92,7 +92,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">AFLuo's site</h1>
+      <h1 class="site-title">Notebook</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/SimpleOT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -154,12 +154,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AFLuo's site">
+      <meta itemprop="name" content="Notebook">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/08/05/hello-world/" class="post-title-link" itemprop="url">Oblivious transfer and its construction method</a>
+            <a href="/2020/08/05/SimpleOT/" class="post-title-link" itemprop="url">Oblivious transfer and its construction method</a>
         </h2>
 
         <div class="post-meta">
@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-06 10:48:57" itemprop="dateModified" datetime="2020-08-06T10:48:57+08:00">2020-08-06</time>
+                <time title="修改时间：2020-08-06 10:52:46" itemprop="dateModified" datetime="2020-08-06T10:52:46+08:00">2020-08-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,7 +215,7 @@
 <h2 id="Noar-Pinkas-Construction"><a href="#Noar-Pinkas-Construction" class="headerlink" title="Noar-Pinkas Construction"></a>Noar-Pinkas Construction</h2><p><a target="_blank" rel="noopener" href="http://www.pinkas.net/PAPERS/otk.ps">[Noar,Pinkas’00]</a> Suppose $A$ has message pair $(m_0,m_1)$ and $B$ has $v\in \{0,1\}$.</p>
 <p>&ensp; 1. $B$ sends the tuple $(g,x=g^a,y=g^b,z_0=g^{c_0},z_1=g^{c_1})$ to $A$, where $a,b\leftarrow \Bbb Z_q,c_v=ab$ and $c_{1-v}\leftarrow \Bbb Z_q$.</p>
 <p>&ensp; 2. $A$ verifies that $z_0\neq z_1$ and applies a partial DDH random self-reduction which computes the following:</p>
-<p>$$<br>\begin{aligned}<br>&amp;(g,x,y,z_0)\to T_0=(g,x,y_0,z_0^\prime)\\<br>&amp;(g,x,y,z_1)\to T_1=(g,x,y_1,z_1^\prime)<br>\end{aligned}<br>$$<br>&ensp; $A$ then encrypts messages using kay pair $(T_0,T_1)$, i.e.<br>$$<br>\begin{aligned}<br>&amp;CT_0=(y_0,m_0z_0^\prime)\\<br>&amp;CT_1=(y_1,m_1z_1^\prime)<br>\end{aligned}<br>$$<br>&ensp; $B$ decrypts $CT_v$ to get $m_v$.</p>
+<p>$$<br>\begin{aligned}<br>&amp;(g,x,y,z_0)\to T_0=(g,x,y_0,z_0^\prime)\\<br>&amp;(g,x,y,z_1)\to T_1=(g,x,y_1,z_1^\prime)<br>\end{aligned}<br>$$<br>&ensp; 3. $A$ then encrypts messages using kay pair $(T_0,T_1)$, i.e.<br>$$<br>\begin{aligned}<br>&amp;CT_0=(y_0,m_0z_0^\prime)\\<br>&amp;CT_1=(y_1,m_1z_1^\prime)<br>\end{aligned}<br>$$<br>&ensp; 4. $B$ decrypts $CT_v$ to get $m_v$.</p>
 <h3 id="Note-that-DDH-random-self-reduction-is-not-introcuced-future-work"><a href="#Note-that-DDH-random-self-reduction-is-not-introcuced-future-work" class="headerlink" title="Note that DDH random self reduction is not introcuced: future work"></a>Note that DDH random self reduction is not introcuced: future work</h3><h2 id="OT-n-1-from-OT-2-1"><a href="#OT-n-1-from-OT-2-1" class="headerlink" title="$OT^n_1$ from $OT^2_1$"></a>$OT^n_1$ from $OT^2_1$</h2><p>Suppose $A$ holds $(m_0,\dots,m_N)\in \{0,1\}^n$ and B has $t\in \{0,\dots,N\}$. Assume $N=2^l-1$ for some $l$.</p>
 <p>&ensp; 1. $A$ prepares $2l$ keys $(K^0_1,K^1_1),\dots,(K^0_l,K^1_l)$.</p>
 <p>&ensp; 2. Let $F_k:\{0,1\}^l\to \{0,1\}^n$ be an PRF. $A$ sends to $B$ the tuple $(C_0,\dots,C_N)$, i.e. view the message index as a bit string $I=I_1,\dots,I_l\in \{0,1\}^l$ and encrypts message using for below:<br>$$<br>C_I=m_I\oplus\oplus^l_{i=1}F_{K_i^{I_i}}(I)<br>$$<br>then $A$ sends the tuple to $B$</p>
