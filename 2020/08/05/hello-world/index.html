@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.0.0">
@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="Oblivious transfer is the very basic tool in secure multiparty computation (MPC), which can be used to construct Yao’s Garbled Circuit and many other useful tools. Famous papers include IKNP2003, C-OT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="Oblivious transfer and its construction method">
 <meta property="og:url" content="http://yoursite.com/2020/08/05/hello-world/index.html">
 <meta property="og:site_name" content="AFLuo&#39;s site">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Oblivious transfer is the very basic tool in secure multiparty computation (MPC), which can be used to construct Yao’s Garbled Circuit and many other useful tools. Famous papers include IKNP2003, C-OT">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-05T02:26:14.001Z">
-<meta property="article:modified_time" content="2020-08-05T02:26:14.001Z">
+<meta property="article:modified_time" content="2020-08-06T02:48:57.768Z">
 <meta property="article:author" content="AFLuo">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Hello World | AFLuo's site</title>
+  <title>Oblivious transfer and its construction method | AFLuo's site</title>
   
 
 
@@ -74,12 +74,12 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Oblivious transfer and its construction method
         </h1>
 
         <div class="post-meta">
@@ -174,6 +174,22 @@
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-08-05 10:26:14" itemprop="dateCreated datePublished" datetime="2020-08-05T10:26:14+08:00">2020-08-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-06 10:48:57" itemprop="dateModified" datetime="2020-08-06T10:48:57+08:00">2020-08-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OT/" itemprop="url" rel="index"><span itemprop="name">OT</span></a>
+                </span>
             </span>
 
           
@@ -187,20 +203,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+        <p>Oblivious transfer is the very basic tool in secure multiparty computation (MPC), which can be used to construct Yao’s Garbled Circuit and many other useful tools. Famous papers include <a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/978-3-540-45146-4_9">IKNP2003</a>, <a target="_blank" rel="noopener" href="https://eprint.iacr.org/2013/552.pdf">C-OT2013</a>.</p>
+<p>In this article, we mainly introduce its concepts and its construction method.</p>
+<h1 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h1><p>Imagine such a scenario where Alice holds a pair of private inputs $(m_1,m_2)$ and Bob holds a choice bit $b$. At the end of the protocol, Alice learns nothing about Bob’s choice bit $b$ and Bob learns $m_b$ but learns nothing about $m_{1-b}$. To put it simply, an oblivious transfer can be represented as follow:<br>$$<br>(\bot;m_b)\leftarrow OT(m_1,m_2;b)<br>$$</p>
+<p>In the above description, Alice and Bob exchanged their message without revealing any extra imformation to each other besides their own private inputs. In OT, Alice is called Sender and Bob Receiver. Such an OT protocol is called 1-out-of-2 Oblivious Transfer, denoted as $OT^2_1$ meaning one choice bit and 2 messages for choice.</p>
+<h1 id="Classical-construction-of-OT-2-1"><a href="#Classical-construction-of-OT-2-1" class="headerlink" title="Classical construction of $OT^2_1$"></a>Classical construction of $OT^2_1$</h1><h2 id="Some-common-tools"><a href="#Some-common-tools" class="headerlink" title="Some common tools"></a>Some common tools</h2><p>Let $G$ be a cyclic group of prime order $p$ and $g$ its generator. </p>
+<p>An RAM is defined as $H:G\to \{0,1\}^n$. In realisation, such an RAM can be instantiated as a hash function like SHA256.</p>
+<h2 id="Bellare-Micali-Construction"><a href="#Bellare-Micali-Construction" class="headerlink" title="Bellare-Micali Construction"></a>Bellare-Micali Construction</h2><p>Suppose $A$ has $(x_0,x_1)\in \{0,1\}^n$, and $B$ has $b\in \{0,1\}$.</p>
+<p>&ensp; 1. $A$ samples $c\leftarrow G$, sends it to $B$. $B$ picks $k\leftarrow \Bbb Z_p$, sets $PK_b=g^k, PK_{1-b}=c/g^k$ and sends $PK_0,PK_1$ back to $A$. $A$ checks whether $PK_0PK_0=c$.</p>
+<p>&ensp; 2. $A$ encrypts with EI Gamal using $PK_0,PK_1$:</p>
+<p>$$<br>\begin{aligned}<br>&amp;C_0=[g^{r_0},H(PK_0^{r_0})\oplus x_0]\\<br>&amp;C_1=[g^{r_1},H(PK_1^{r_1})\oplus x_1]<br>\end{aligned}<br>$$</p>
+<p>&emsp; then sends $C_0,C_1$ back to $B$</p>
+<p>&ensp; 3. $B$ then decrypts $C_b$, i.e. let $c_0=C_b[0]$ and $c_1=C_b[1]$, then $B$ has $x_b=H(c_0^k)\oplus c_1$.</p>
+<p><strong>Security</strong>: It’s obvious that $A$ learns nothing during the protocol and $B$ can only learn $x_b$ thus the protocol is secure against semi-honest party.</p>
+<h2 id="Noar-Pinkas-Construction"><a href="#Noar-Pinkas-Construction" class="headerlink" title="Noar-Pinkas Construction"></a>Noar-Pinkas Construction</h2><p><a target="_blank" rel="noopener" href="http://www.pinkas.net/PAPERS/otk.ps">[Noar,Pinkas’00]</a> Suppose $A$ has message pair $(m_0,m_1)$ and $B$ has $v\in \{0,1\}$.</p>
+<p>&ensp; 1. $B$ sends the tuple $(g,x=g^a,y=g^b,z_0=g^{c_0},z_1=g^{c_1})$ to $A$, where $a,b\leftarrow \Bbb Z_q,c_v=ab$ and $c_{1-v}\leftarrow \Bbb Z_q$.</p>
+<p>&ensp; 2. $A$ verifies that $z_0\neq z_1$ and applies a partial DDH random self-reduction which computes the following:</p>
+<p>$$<br>\begin{aligned}<br>&amp;(g,x,y,z_0)\to T_0=(g,x,y_0,z_0^\prime)\\<br>&amp;(g,x,y,z_1)\to T_1=(g,x,y_1,z_1^\prime)<br>\end{aligned}<br>$$<br>&ensp; $A$ then encrypts messages using kay pair $(T_0,T_1)$, i.e.<br>$$<br>\begin{aligned}<br>&amp;CT_0=(y_0,m_0z_0^\prime)\\<br>&amp;CT_1=(y_1,m_1z_1^\prime)<br>\end{aligned}<br>$$<br>&ensp; $B$ decrypts $CT_v$ to get $m_v$.</p>
+<h3 id="Note-that-DDH-random-self-reduction-is-not-introcuced-future-work"><a href="#Note-that-DDH-random-self-reduction-is-not-introcuced-future-work" class="headerlink" title="Note that DDH random self reduction is not introcuced: future work"></a>Note that DDH random self reduction is not introcuced: future work</h3><h2 id="OT-n-1-from-OT-2-1"><a href="#OT-n-1-from-OT-2-1" class="headerlink" title="$OT^n_1$ from $OT^2_1$"></a>$OT^n_1$ from $OT^2_1$</h2><p>Suppose $A$ holds $(m_0,\dots,m_N)\in \{0,1\}^n$ and B has $t\in \{0,\dots,N\}$. Assume $N=2^l-1$ for some $l$.</p>
+<p>&ensp; 1. $A$ prepares $2l$ keys $(K^0_1,K^1_1),\dots,(K^0_l,K^1_l)$.</p>
+<p>&ensp; 2. Let $F_k:\{0,1\}^l\to \{0,1\}^n$ be an PRF. $A$ sends to $B$ the tuple $(C_0,\dots,C_N)$, i.e. view the message index as a bit string $I=I_1,\dots,I_l\in \{0,1\}^l$ and encrypts message using for below:<br>$$<br>C_I=m_I\oplus\oplus^l_{i=1}F_{K_i^{I_i}}(I)<br>$$<br>then $A$ sends the tuple to $B$</p>
+<p>&ensp; 3. Let $t=(t_1,\dots,t_l)\in \{0,1\}^l$. Then $l$ $OT^2_1$s are performed where duting the $j$th $OT$, $A$ has $(K_j^0,K_j^1)$ and $B$ has $t_j\in \{0,1\}$.</p>
+<p>&ensp; 4.$B$ now has $K_1^{t_1},\dots,K_l^{t_l}$ and can decrypt $C_t$ to get $m_t$.</p>
+<p>Thus with $log N$ $OT_1^2$s, a single $OT_1^N$ can be acheived.</p>
+<h1 id="Remain-to-be-filled"><a href="#Remain-to-be-filled" class="headerlink" title="Remain to be filled"></a>Remain to be filled</h1>
     </div>
 
     
@@ -270,7 +296,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Concepts"><span class="nav-number">1.</span> <span class="nav-text">Concepts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Classical-construction-of-OT-2-1"><span class="nav-number">2.</span> <span class="nav-text">Classical construction of $OT^2_1$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-common-tools"><span class="nav-number">2.1.</span> <span class="nav-text">Some common tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bellare-Micali-Construction"><span class="nav-number">2.2.</span> <span class="nav-text">Bellare-Micali Construction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Noar-Pinkas-Construction"><span class="nav-number">2.3.</span> <span class="nav-text">Noar-Pinkas Construction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-that-DDH-random-self-reduction-is-not-introcuced-future-work"><span class="nav-number">2.3.1.</span> <span class="nav-text">Note that DDH random self reduction is not introcuced: future work</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OT-n-1-from-OT-2-1"><span class="nav-number">2.4.</span> <span class="nav-text">$OT^n_1$ from $OT^2_1$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remain-to-be-filled"><span class="nav-number">3.</span> <span class="nav-text">Remain to be filled</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -287,6 +313,10 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
       </div>
   </nav>
 </div>
@@ -369,6 +399,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
 
   
 
